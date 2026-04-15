@@ -46,7 +46,7 @@ export default function ProjectListPage() {
     if (!editing) return;
     if (editQuick) {
       const count = projects.filter(
-        (pr) => pr.isQuickAccess && pr.id !== editing.id
+        (pr) => pr.isQuickAccess && pr.id !== editing.id,
       ).length;
       if (count >= 4) {
         alert("You can only have a maximum of 4 Quick Access projects.");
@@ -61,8 +61,8 @@ export default function ProjectListPage() {
     });
     setProjects(
       await listProjects(
-        filter === "All" ? undefined : { status: filter as ProjectStatus }
-      )
+        filter === "All" ? undefined : { status: filter as ProjectStatus },
+      ),
     );
     setEditing(null);
   };
@@ -71,7 +71,7 @@ export default function ProjectListPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">
-          Welcome Oghenetega, what do you want to do today?
+          Welcome Code X, what do you want to do today?
         </h1>
         <div className="flex items-center space-x-4">
           <FilterDropdown
